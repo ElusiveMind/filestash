@@ -110,66 +110,13 @@ func (this S3Backend) LoginForm() Form {
 			},
 			FormElement{
 				Name:        "access_key_id",
-				Type:        "text",
-				Placeholder: "Access Key ID*",
+				Type:        "hidden",
 				Value: os.Getenv("S3_ACCESS_KEY_ID"),
 			},
 			FormElement{
 				Name:        "secret_access_key",
-				Type:        "text",
-				Placeholder: "Secret Access Key*",
+				Type:        "hidden",
 				Value: os.Getenv("S3_ACCESS_KEY_SECRET"),
-			},
-			FormElement{
-				Name:        "advanced",
-				Type:        "enable",
-				Placeholder: "Advanced",
-				Target: []string{
-					"s3_region", "s3_endpoint", "s3_role_arn", "s3_session_token",
-					"s3_path", "s3_encryption_key", "s3_number_thread",
-				},
-			},
-			FormElement{
-				Id:          "s3_region",
-				Name:        "region",
-				Type:        "text",
-				Placeholder: "Region",
-			},
-			FormElement{
-				Id:          "s3_endpoint",
-				Name:        "endpoint",
-				Type:        "text",
-				Placeholder: "Endpoint",
-			},
-			FormElement{
-				Id:          "s3_role_arn",
-				Name:        "role_arn",
-				Type:        "text",
-				Placeholder: "Role ARN",
-			},
-			FormElement{
-				Id:          "s3_session_token",
-				Name:        "session_token",
-				Type:        "text",
-				Placeholder: "Session Token",
-			},
-			FormElement{
-				Id:          "s3_path",
-				Name:        "path",
-				Type:        "text",
-				Placeholder: "Path",
-			},
-			FormElement{
-				Id:          "s3_encryption_key",
-				Name:        "encryption_key",
-				Type:        "text",
-				Placeholder: "Encryption Key",
-			},
-			FormElement{
-				Id:          "s3_number_thread",
-				Name:        "number_thread",
-				Type:        "text",
-				Placeholder: "Num. Thread",
 			},
 		},
 	}
