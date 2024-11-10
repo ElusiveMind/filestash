@@ -116,7 +116,7 @@ func (this S3Backend) LoginForm() Form {
 			},
 			FormElement{
 				Name:        "secret_access_key",
-				Type:        "password",
+				Type:        "text",
 				Placeholder: "Secret Access Key*",
 				Value: os.Getenv("S3_ACCESS_KEY_SECRET"),
 			},
