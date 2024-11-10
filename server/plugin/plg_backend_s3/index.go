@@ -49,6 +49,11 @@ func (this S3Backend) Init(params map[string]string, app *App) (IBackend, error)
 			params["region"] = "auto"
 		}
 	}
+
+	params["access_key_id"] = os.Getenv("S3_ACCESS_KEY_ID")
+	params["access_key_secret"] = os.Getenv("S3_ACCESS_KEY_SECRET")
+	params["region"] = "us-east-1"
+
 	creds := []credentials.Provider{}
 	if params["access_key_id"] != "" || params["secret_access_key"] != "" {
 		creds = append(creds, &credentials.StaticProvider{Value: credentials.Value{
